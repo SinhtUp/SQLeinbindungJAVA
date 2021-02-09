@@ -22,16 +22,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
-<!-- PROJECT LOGO -->
+
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
@@ -60,7 +54,7 @@ Aufgabenstellung:
   
 -Es soll eine Datenbank erstellt werden, welche vorher als liste in Excell zusammengetragen wurde.  
 
--Die Werte werden übergeben und mittelst programm als sql datenbank angelegt werden.
+-Die Werte werden übergeben und mittelst programm als sql datenbank angelegt.
 
 -Liste überarbeiten so das die einzelnen Felder die Formatierung Spaltengerecht ist (Bsp.: BIP 1E+11 ist nicht zulässig oder NULL Werte beachten)  
 
