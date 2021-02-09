@@ -9,6 +9,8 @@
 // -Zeilen der Datenbank mit Werten aus der CSV Datei ab Zeile 2 füllen
 //-aufräumen und in funktionen/methoden aufteilen
 
+// Rest der aktuellen Fehler siehst du ja beim Kompilieren,die libs und co lade ich später noch hoch!
+
 package com.company;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
