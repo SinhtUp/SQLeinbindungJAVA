@@ -9,8 +9,8 @@
 // -Zeilen der Datenbank mit Werten aus der CSV Datei ab Zeile 2 füllen
 //-aufräumen und in funktionen/methoden aufteilen
 
-// Rest der aktuellen Fehler siehst du ja beim Kompilieren,die libs und co lade ich später noch hoch!
 
+//hochkoma mit stringbuilder beim String.split() hinzufügen damit strings korrekt an sql übergeben werden können?! richtig?!
 package com.company;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -32,9 +32,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new FileReader("E:\\JavaProjects\\SQLeinbindungJAVA2\\AAAAResourcen\\CIAListeCSV.csv"));
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
+        String[] header = line.split(",");  //String.split(trennzeichen) teilt einen eingelesenen string an vorgegebener stelle
         br.close();
 
-        //return fileAsString;
         System.out.println(line);
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
@@ -43,14 +43,30 @@ public class Main {
             //Einfügen/Verändern
 
             String createDatabase ="CREATE DATABASE IF NOT EXISTS cia_database"; //Datenbank wird nur angelegt wenn sie nicht bereits existiert
-            String createTable = "CREATE TABLE IF NOT EXISTS cia_liste ("+line+"); ";
+            String createTable = "CREATE TABLE IF NOT EXISTS cia_liste ; ";
+
+            String firstRowId = "ALTER TABLE cia_database " +
+                    "ADD "+i+2+header[i];
             Statement stmt = conn.createStatement();
             stmt.execute(createDatabase);
             stmt.execute("USE cia_database;");
             System.out.println("Datenbank cia_database erzeugt(wenn sie nicht bereits vorhanden war)");
             stmt.execute(createTable);
-            stmt.close();
+            for (int i = 0; i < header.length;i++){   //Ausgabe der einzelnen im Array gespeicherten Strings durch For Schleife
+                System.out.println(header[i]);
+                int j = i+1;
+                String firstRowId = "ALTER TABLE cia_database "
+                        +"ADD 'id'+j+;
+                stmt.execute(firstRowId);
+            }
 
+            for (int i = 0; i < header.length;i++){   //Ausgabe der einzelnen im Array gespeicherten Strings durch For Schleife
+            System.out.println(header[i]);
+            String headerQuery = "ALTER TABLE cia_database " +
+                                    "ADD i+3"+header[i];                           //+2 wegen ab 0 zählen und vorher erstellte id column 1 .
+            stmt.execute(headerQuery);
+            }
+            stmt.close();
             //----------------------------------------------------------------------
             //ausgeben
 /**
