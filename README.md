@@ -36,7 +36,7 @@
 
   <p align="center">
     Kleine Gruppen arbeit zum Thema SQL in JAVA<br />
-    <strong>von S�ren Benter und Ufuk Hamit Alkin</strong>
+    <strong>von Sören Benter und Ufuk Hamit Alkin</strong>
     
   </p>
 </p>
@@ -52,15 +52,15 @@
 
 Aufgabenstellung:
   
--Es soll eine Datenbank erstellt werden, welche vorher als liste in Excell zusammengetragen wurde.  
+✓-Es soll eine Datenbank erstellt werden, welche vorher als liste in Excell zusammengetragen wurde.  
 
--Die Werte werden �bergeben und mittelst programm als sql datenbank angelegt.
+֍-Die Werte werden übergeben und mittelst programm als sql datenbank angelegt.
 
--Liste �berarbeiten so das die einzelnen Felder die Formatierung Spaltengerecht ist (Bsp.: BIP 1E+11 ist nicht zul�ssig oder NULL Werte beachten)  
+✓-Liste überarbeiten so das die einzelnen Felder die Formatierung Spaltengerecht ist (Bsp.: BIP 1E+11 ist nicht zulässig oder NULL Werte beachten)  
 
--Liste Auslesen (die Daten aus der Tabelle sollen NICHT Normalisiert werden)  
+֍-Liste Auslesen (die Daten aus der Tabelle sollen NICHT Normalisiert werden)  
 
--Daten in einer mysql Datenbank abspeichern  
+֍-Daten in einer mysql Datenbank abspeichern  
 
--dump der Datenbank an mich zur�ck  
+֍-dump der Datenbank an mich zurück  
 
