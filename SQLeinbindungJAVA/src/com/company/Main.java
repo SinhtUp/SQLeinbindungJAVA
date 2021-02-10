@@ -23,13 +23,15 @@ import java.sql.*;
 
 public class Main {
 
+
     public static void main(String[] args) throws IOException {
 
         String url = "jdbc:mysql://localhost:3306/?useJDBCCompliantTimezoneshift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
         String user = "root";
         String password ="";
 
-        BufferedReader br = new BufferedReader(new FileReader("E:\\JavaProjects\\SQLeinbindungJAVA2\\AAAAResourcen\\CIAListeCSV.csv"));
+
+        BufferedReader br = new BufferedReader(new FileReader("src/abhängigkeiten/CIAListeCSV.csv"));
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
         String[] header = line.split(",");  //String.split(trennzeichen) teilt einen eingelesenen string an vorgegebener stelle
@@ -37,28 +39,31 @@ public class Main {
 
         System.out.println(line);
 
+
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             System.out.println("Erfolgreich mit Datenbankserver verbunden");
 
             //Einfügen/Verändern
 
             String createDatabase ="CREATE DATABASE IF NOT EXISTS cia_database"; //Datenbank wird nur angelegt wenn sie nicht bereits existiert
-            String createTable = "CREATE TABLE IF NOT EXISTS cia_liste ; ";
+            String createTable = "CREATE TABLE IF NOT EXISTS cia_liste ; "; //Tabelle wird angelegt wenn sie nicht existiert
 
-            String firstRowId = "ALTER TABLE cia_database " +
-                    "ADD "+i+2+header[i];
+            //String firstRowId;  "ALTER TABLE cia_database " +
+              //      "ADD "+i+2+header[i];
             Statement stmt = conn.createStatement();
             stmt.execute(createDatabase);
             stmt.execute("USE cia_database;");
             System.out.println("Datenbank cia_database erzeugt(wenn sie nicht bereits vorhanden war)");
             stmt.execute(createTable);
-            for (int i = 0; i < header.length;i++){   //Ausgabe der einzelnen im Array gespeicherten Strings durch For Schleife
-                System.out.println(header[i]);
-                int j = i+1;
-                String firstRowId = "ALTER TABLE cia_database "
-                        +"ADD 'id'+j+;
-                stmt.execute(firstRowId);
-            }
+
+
+                for (int i = 0; i < header.length;i++){   //Ausgabe der einzelnen im Array gespeicherten Strings durch For Schleife
+                    System.out.println(header[i]);
+                    int j = i+1;
+                   // String firstRowId = "ALTER TABLE cia_database "
+                     //       +"ADD 'id'+j+;
+                    //stmt.execute(firstRowId);
+                }
 
             for (int i = 0; i < header.length;i++){   //Ausgabe der einzelnen im Array gespeicherten Strings durch For Schleife
             System.out.println(header[i]);
@@ -99,7 +104,10 @@ public class Main {
     }
 
 }
-    }
+
+
+
+}
 
 
 
